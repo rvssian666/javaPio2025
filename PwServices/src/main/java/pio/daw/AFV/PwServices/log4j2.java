@@ -31,7 +31,6 @@ public class log4j2 {
             
         } catch (IllegalArgumentException e) {
             // El nivel ERROR es para fallos importantes. 
-            // Siempre se incluye la excepción 'e' como último argumento.
             logger.error("Error al procesar la orden {}. Motivo: {}", ordenId, e.getMessage(), e);
             return false;
         }

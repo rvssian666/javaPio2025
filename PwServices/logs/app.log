@@ -1,0 +1,76 @@
+2025-12-05 14:25:52,630 INFO p.d.A.P.log4j2 [main] --- 🚀 Aplicación iniciada con Log4j2. ---
+2025-12-05 14:25:52,635 INFO p.d.A.P.log4j2 [main] Mensaje INFO: Ejecutando el proceso principal.
+2025-12-05 14:25:52,636 WARN p.d.A.P.log4j2 [main] Mensaje WARN: Se está usando un recurso obsoleto.
+2025-12-05 14:25:52,636 ERROR p.d.A.P.log4j2 [main] Mensaje ERROR: Fallo al realizar la operación.
+java.lang.ArithmeticException: / by zero
+	at pio.daw.AFV.PwServices.log4j2.main(log4j2.java:26) [classes/:?]
+2025-12-05 14:25:52,662 FATAL p.d.A.P.log4j2 [main] Mensaje FATAL: Fallo crítico. El sistema debe parar.
+2025-12-05 14:25:52,662 INFO p.d.A.P.log4j2 [main] --- ✅ Aplicación finalizada. ---
+2025-12-05 16:12:03,713 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-05 16:12:03,723 INFO p.d.A.P.log4j2Test [main] INICIO de la Prueba de Aplicación.
+2025-12-05 16:12:03,723 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-05 16:12:03,723 INFO p.d.A.P.log4j2Test [main] --- Ejecutando Prueba 1: Orden Válida ---
+2025-12-05 16:12:03,752 INFO p.d.A.P.log4j2 [main] Verificando stock para el cliente: Ana García
+2025-12-05 16:12:03,753 INFO p.d.A.P.log4j2 [main] Orden ABC12345 procesada y lista para envío.
+2025-12-05 16:12:03,753 INFO p.d.A.P.log4j2Test [main] Resultado de Prueba 1: Éxito=true
+2025-12-05 16:12:03,754 INFO p.d.A.P.log4j2Test [main] --- Ejecutando Prueba 2: Orden Inválida ---
+2025-12-05 16:12:03,755 INFO p.d.A.P.log4j2 [main] Verificando stock para el cliente: Juan Pérez
+2025-12-05 16:12:03,755 ERROR p.d.A.P.log4j2 [main] Error al procesar la orden X. Motivo: ID de orden inválido.
+java.lang.IllegalArgumentException: ID de orden inválido.
+	at pio.daw.AFV.PwServices.log4j2.procesarOrden(log4j2.java:25) [classes/:?]
+	at pio.daw.AFV.PwServices.log4j2Test.main(log4j2Test.java:26) [classes/:?]
+2025-12-05 16:12:03,793 INFO p.d.A.P.log4j2Test [main] Resultado de Prueba 2: Éxito=false
+2025-12-05 16:12:03,793 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-05 16:12:03,793 INFO p.d.A.P.log4j2Test [main] FIN de la Prueba de Aplicación.
+2025-12-05 16:12:03,793 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:20:11,922 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:20:11,930 INFO p.d.A.P.log4j2Test [main] INICIO de la Prueba de Aplicación.
+2025-12-07 09:20:11,931 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:20:11,931 INFO p.d.A.P.log4j2Test [main] --- Ejecutando Prueba 1: Orden Válida ---
+2025-12-07 09:20:12,021 INFO p.d.A.P.log4j2 [main] Verificando stock para el cliente: Ana García
+2025-12-07 09:20:12,024 INFO p.d.A.P.log4j2 [main] Orden ABC12345 procesada y lista para envío.
+2025-12-07 09:20:12,025 INFO p.d.A.P.log4j2Test [main] Resultado de Prueba 1: Éxito=true
+2025-12-07 09:20:12,026 INFO p.d.A.P.log4j2Test [main] --- Ejecutando Prueba 2: Orden Inválida ---
+2025-12-07 09:20:12,026 INFO p.d.A.P.log4j2 [main] Verificando stock para el cliente: Juan Pérez
+2025-12-07 09:20:12,027 ERROR p.d.A.P.log4j2 [main] Error al procesar la orden X. Motivo: ID de orden inválido.
+java.lang.IllegalArgumentException: ID de orden inválido.
+	at pio.daw.AFV.PwServices.log4j2.procesarOrden(log4j2.java:25) [classes/:?]
+	at pio.daw.AFV.PwServices.log4j2Test.main(log4j2Test.java:26) [classes/:?]
+2025-12-07 09:20:12,058 INFO p.d.A.P.log4j2Test [main] Resultado de Prueba 2: Éxito=false
+2025-12-07 09:20:12,059 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:20:12,059 INFO p.d.A.P.log4j2Test [main] FIN de la Prueba de Aplicación.
+2025-12-07 09:20:12,059 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:39:46,533 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:39:46,540 INFO p.d.A.P.log4j2Test [main] INICIO de la Prueba de Aplicación.
+2025-12-07 09:39:46,541 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:39:46,541 INFO p.d.A.P.log4j2Test [main] --- Ejecutando Prueba 1: Orden Válida ---
+2025-12-07 09:39:46,564 INFO p.d.A.P.log4j2 [main] Verificando stock para el cliente: Ana García
+2025-12-07 09:39:46,565 INFO p.d.A.P.log4j2 [main] Orden ABC12345 procesada y lista para envío.
+2025-12-07 09:39:46,566 INFO p.d.A.P.log4j2Test [main] Resultado de Prueba 1: Éxito=true
+2025-12-07 09:39:46,566 INFO p.d.A.P.log4j2Test [main] --- Ejecutando Prueba 2: Orden Inválida ---
+2025-12-07 09:39:46,566 INFO p.d.A.P.log4j2 [main] Verificando stock para el cliente: Juan Pérez
+2025-12-07 09:39:46,567 ERROR p.d.A.P.log4j2 [main] Error al procesar la orden X. Motivo: ID de orden inválido.
+java.lang.IllegalArgumentException: ID de orden inválido.
+	at pio.daw.AFV.PwServices.log4j2.procesarOrden(log4j2.java:25) [classes/:?]
+	at pio.daw.AFV.PwServices.log4j2Test.main(log4j2Test.java:26) [classes/:?]
+2025-12-07 09:39:46,605 INFO p.d.A.P.log4j2Test [main] Resultado de Prueba 2: Éxito=false
+2025-12-07 09:39:46,606 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:39:46,606 INFO p.d.A.P.log4j2Test [main] FIN de la Prueba de Aplicación.
+2025-12-07 09:39:46,607 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:39:46,701 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:39:46,710 INFO p.d.A.P.log4j2Test [main] INICIO de la Prueba de Aplicación.
+2025-12-07 09:39:46,710 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:39:46,710 INFO p.d.A.P.log4j2Test [main] --- Ejecutando Prueba 1: Orden Válida ---
+2025-12-07 09:39:46,747 INFO p.d.A.P.log4j2 [main] Verificando stock para el cliente: Ana García
+2025-12-07 09:39:46,748 INFO p.d.A.P.log4j2 [main] Orden ABC12345 procesada y lista para envío.
+2025-12-07 09:39:46,749 INFO p.d.A.P.log4j2Test [main] Resultado de Prueba 1: Éxito=true
+2025-12-07 09:39:46,749 INFO p.d.A.P.log4j2Test [main] --- Ejecutando Prueba 2: Orden Inválida ---
+2025-12-07 09:39:46,749 INFO p.d.A.P.log4j2 [main] Verificando stock para el cliente: Juan Pérez
+2025-12-07 09:39:46,750 ERROR p.d.A.P.log4j2 [main] Error al procesar la orden X. Motivo: ID de orden inválido.
+java.lang.IllegalArgumentException: ID de orden inválido.
+	at pio.daw.AFV.PwServices.log4j2.procesarOrden(log4j2.java:25) [classes/:?]
+	at pio.daw.AFV.PwServices.log4j2Test.main(log4j2Test.java:26) [classes/:?]
+2025-12-07 09:39:46,802 INFO p.d.A.P.log4j2Test [main] Resultado de Prueba 2: Éxito=false
+2025-12-07 09:39:46,802 INFO p.d.A.P.log4j2Test [main] ==================================================
+2025-12-07 09:39:46,802 INFO p.d.A.P.log4j2Test [main] FIN de la Prueba de Aplicación.
+2025-12-07 09:39:46,802 INFO p.d.A.P.log4j2Test [main] ==================================================

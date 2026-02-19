@@ -6,7 +6,7 @@ public class EventoEstatico extends Eventos{
 	
 
 	public EventoEstatico(int id, String n, String h, String tema,boolean asisteArtista,String des) {
-		super(n, h, tema);
+		super(n, h, tema, price);
 		this.asisteArtista=asisteArtista;
 		this.descripcion=des;
 	

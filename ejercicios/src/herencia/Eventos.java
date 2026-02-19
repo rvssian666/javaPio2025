@@ -12,7 +12,7 @@ public class Eventos {
 	protected String name;
 	protected String hora;
 	protected String tematica;
-	protected double price;
+	protected static double price;
 
 	public Eventos(String n, String h, String tema, double p) {
 		// de esta manera el "id" se accede desde la clase y no desde

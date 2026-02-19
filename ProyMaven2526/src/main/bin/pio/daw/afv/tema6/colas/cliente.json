@@ -1,0 +1,62 @@
+[
+  {
+    "telefono": 600111001,
+    "edad": 28,
+    "nombre": "Carlos",
+    "apellido": "García"
+  },
+  {
+    "telefono": 600222002,
+    "edad": 35,
+    "nombre": "Lucía",
+    "apellido": "Martínez"
+  },
+  {
+    "telefono": 600333003,
+    "edad": 42,
+    "nombre": "Jorge",
+    "apellido": "Rodríguez"
+  },
+  {
+    "telefono": 600444004,
+    "edad": 19,
+    "nombre": "Sofía",
+    "apellido": "López"
+  },
+  {
+    "telefono": 600555005,
+    "edad":20,
+    "nombre": "Andrés",
+    "apellido": "Sánchez"
+  },
+  {
+    "telefono": 600666006,
+    "edad": 24,
+    "nombre": "Elena",
+    "apellido": "Pérez"
+  },
+  {
+    "telefono": 600777007,
+    "edad": 50,
+    "nombre": "Miguel",
+    "apellido": "Gómez"
+  },
+  {
+    "telefono": 600888008,
+    "edad": 27,
+    "nombre": "Valeria",
+    "apellido": "Díaz"
+  },
+  {
+    "telefono": 600999009,
+    "edad":16,
+    "nombre": "Roberto",
+    "apellido": "Ruiz"
+  },
+  {
+    "telefono": 600123987,
+    "edad": 45,
+    "nombre": "Isabel",
+    "apellido": "Torres"
+  }
+]
