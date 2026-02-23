@@ -2,9 +2,13 @@ package pio.daw.afv.tema6.list;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ejemploArrayList {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		List<String> listaNombres = new ArrayList<>();
@@ -14,21 +18,25 @@ public class ejemploArrayList {
 		listaNombres.add("Carlos");
 		listaNombres.add("Sofía");
 		listaNombres.add("Carlos");
+		listaNombres.add("Es");
 		System.out.println("Tamaño del arrayList " + listaNombres.size());
 		System.out.println("Primer elemento de la lista " + listaNombres.get(0));
 		System.out.println("Tercer elemento de la lista " + listaNombres.get(2));
-		//recorrer el array
-		for(String nombre:listaNombres) {
-			System.out.println(nombre+"\t");
+		// recorrer el array
+		for (String nombre : listaNombres) {
+			System.out.println(nombre + "\t");
 		}
-		if(listaNombres.contains("Sofia")) {
+		if (listaNombres.contains("Sofia")) {
 			System.out.println("n\si que esta sofia");
 		}
-		//eliminar 
+		// eliminar
 		listaNombres.remove("Carlos");
-		System.out.println("Lista de nombres: "+listaNombres);
-		
-		
+		System.out.println("Lista de nombres: " + listaNombres);
+
+		//modificados por mi 
+		System.out.println("____");
+		List<String> nuevaLista = listaNombres.stream().filter(n -> n.length() > 3).toList();
+		System.out.println(nuevaLista);
 	}
 
 }
