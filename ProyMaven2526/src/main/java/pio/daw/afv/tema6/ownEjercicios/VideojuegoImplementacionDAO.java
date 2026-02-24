@@ -1,6 +1,8 @@
 package pio.daw.afv.tema6.ownEjercicios;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -41,57 +43,62 @@ public class VideojuegoImplementacionDAO implements IVideojuegoDAO {
 
 	@Override
 	public List<Videojuegos> buscarPorGenero(String genero) {
-		//esto devuelve la lista desordenada 
-		// videoJLista.stream().filter(v -> v.getGenero() == genero).collect(Collectors.toList());
-		 return videoJLista.stream().filter(v->v.getGenero()==genero).sorted().collect(Collectors.toList());
+		// esto devuelve la lista desordenada
+		// videoJLista.stream().filter(v -> v.getGenero() ==
+		// genero).collect(Collectors.toList());
+		return videoJLista.stream().filter(v -> v.getGenero() == genero)
+				.sorted(Comparator.comparing(Videojuegos::getTitulo)).collect(Collectors.toList());
 	}
 
 	@Override
 	public List<Videojuegos> obtenerPorRangoPrecios(double precioMin, double precioMax) {
-		// TODO Auto-generated method stub
-		return null;
+		return videoJLista.stream().filter(v -> v.getPrecio() > precioMin && v.getPrecio() < precioMax)// filtramos por
+																										// el rango de
+																										// precio
+				.collect(Collectors.toList());
 	}
 
 	@Override
 	public List<Videojuegos> obtenerMejoresCalificados(int cantidad) {
-		// TODO Auto-generated method stub
-		return null;
+		return videoJLista.stream().filter(v -> v.getCalificacion() > cantidad).collect(Collectors.toList());
 	}
 
 	@Override
 	public List<Videojuegos> obtenerJuegosPorAño(int año) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return videoJLista.stream().filter(v -> v.getAño() == año).sorted(Comparator.comparingInt(Videojuegos::getAño))
+				.collect(Collectors.toList());
 	}
 
 	@Override
 	public Map<String, List<Videojuegos>> agruparPorGenero() {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String, List<Videojuegos>> mapGeneros = new HashMap<>();
+		mapGeneros = videoJLista.stream().collect(Collectors.groupingBy(Videojuegos::getGenero));
+		return mapGeneros;
 	}
 
 	@Override
 	public Map<String, Double> precioPromedioPorGenero() {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String, Double> mapPromedioGenero = new HashMap<>();
+		mapPromedioGenero=videoJLista.stream().collect(Collectors.groupingBy(Videojuegos::getGenero,Collectors.averagingDouble(Videojuegos::getPrecio)));
+		return mapPromedioGenero;
 	}
 
 	@Override
 	public Map<Integer, List<Videojuegos>> agruparPorAño() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public boolean existeJuegoConCalificacionMayor(double calificacion) {
-		// TODO Auto-generated method stub
-		return false;
+		return videoJLista.stream()
+				.anyMatch(v->v.getCalificacion()>calificacion);//comprueba si existe alguno (retorna booleano)
 	}
 
 	@Override
 	public boolean existeJuegoEnRango(int añoMin, int añoMax) {
-		// TODO Auto-generated method stub
-		return false;
+		return videoJLista.stream().anyMatch(v-> v.getAño()>añoMin &&v.getAño()<añoMax);
 	}
 
 }
