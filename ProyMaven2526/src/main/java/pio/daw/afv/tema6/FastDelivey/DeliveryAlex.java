@@ -44,29 +44,33 @@ public class DeliveryAlex {
 
 	public static List<PaqueteDTO> filtrarPaquetesPesados(Queue<PaqueteDTO> cola, double pesoMax) {
 		List<PaqueteDTO> pesados = new ArrayList<>();
-		
-
-		pesados = cola.stream().filter(p -> p.getPeso() > 15).collect(Collectors.toList());
+		while (!cola.isEmpty()) {
+			if (cola.peek().getPeso() > pesoMax)
+				pesados.add(cola.poll());
+			else 
+				cola.poll();
+		}
+		// pesados = cola.stream().filter(p -> p.getPeso() >
+		// 15).collect(Collectors.toList());
 		return pesados;
 	}
 
 	public static Map<String, List<PaqueteDTO>> registrarPaquetesPorCiudad(Queue<PaqueteDTO> cola) {
 		Map<String, List<PaqueteDTO>> mapPaqCiudad = new HashMap<>();
-		
-		mapPaqCiudad=cola.stream().collect(Collectors.groupingBy(PaqueteDTO::getCiudadDestino));
-		
+
+		mapPaqCiudad = cola.stream().collect(Collectors.groupingBy(PaqueteDTO::getCiudadDestino));
+
 		return mapPaqCiudad;
 	}
 
 	public static double buscarMaxPesoConStreams(List<PaqueteDTO> lista) {
-		return	lista.stream().mapToDouble(PaqueteDTO::getPeso).reduce(Double.MIN_NORMAL, Double::max);
-				
+		return lista.stream().mapToDouble(PaqueteDTO::getPeso).reduce(Double.MIN_NORMAL, Double::max);
+
 	}
 
 	public static double buscarMediaPesoCiudadConStreams(List<PaqueteDTO> lista, String sCiudad) {
-		return lista.stream().filter(p->p.getCiudadDestino()==sCiudad)
-											.collect(Collectors.averagingDouble(PaqueteDTO::getPeso));
-	
+		return lista.stream().filter(p -> p.getCiudadDestino() == sCiudad)
+				.collect(Collectors.averagingDouble(PaqueteDTO::getPeso));
 
 	}
 }

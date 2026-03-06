@@ -1,5 +1,6 @@
 package pio.daw.afv.tema6.mapj8;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -25,6 +26,9 @@ public class Ejercicio_MapEstudiantes {
 		
 		aumentarCalificaciones(estudiantes, 5);
 		calcularPromedioCalificaciones(estudiantes);
+		
+		
+
 	}
 
 	// Mostrar todos los estudiantes
@@ -51,11 +55,11 @@ public class Ejercicio_MapEstudiantes {
 	// Aumentar todas las calificaciones en X puntos
 	static void aumentarCalificaciones(Map<String, Integer> estudiantes, int aumento) {
 		estudiantes.replaceAll((nombre,calificacion) -> calificacion+aumento);
+		System.out.println("Aumentando calificaciones");
 		mostrarTodos(estudiantes);
 	}
 	// Calcular promedio
 	static void calcularPromedioCalificaciones(Map<String, Integer> estudiantes) {
-		int total=estudiantes.size();
 		double calificacionnes= estudiantes.values().stream().mapToDouble(Integer::doubleValue).average().orElse(0);
 	}
 }

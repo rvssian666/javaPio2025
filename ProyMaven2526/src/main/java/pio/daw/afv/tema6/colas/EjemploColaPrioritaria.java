@@ -27,7 +27,7 @@ public class EjemploColaPrioritaria {
 				.collect(Collectors.toList());
 		
 		long cantElementos=colaPrioritaria.stream().count();
-		System.out.println("----------------Cantidad e elmentos " + cantElementos);
+		System.out.println("----------------Cantidad de elementos " + cantElementos);
 		System.out.println(nuevaListaXCola);
 	}
 
