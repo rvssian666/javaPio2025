@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class CargarAlumnos {
 
 	public static void main(String[] args) {
-		List<AlumnoPio> alumnosList = new ArrayList<>();
+		
 		File alumnosFich = new File("src\\main\\java\\pio\\daw\\afv\\tema7\\lectura\\datosAlumnos.txt");
 		Scanner sc = null;
 		try {
