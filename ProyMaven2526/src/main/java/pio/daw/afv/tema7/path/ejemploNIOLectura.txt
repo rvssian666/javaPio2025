@@ -1,0 +1,10 @@
+12345678A Laura García Santos 100001 DAW 1
+23456789B Carlos Martínez López 100002 DAM 2
+34567890C María Hernández Ruiz 100003 ASIR 1
+45678901D Javier Pérez Gómez 100004 DAW 2
+56789012E Lucía Serrano Díaz 100005 DAM 1
+67890123F Andrés Torres Navarro 100006 ASIR 2
+78901234G Elena Ramírez Castro 100007 DAW 1
+89012345H Sergio Vega Morales 100008 DAM 2
+90123456J Paula Flores Iglesias 100009 ASIR 1
+01234567K Hugo Cano Reyes 100010 DAW 2
