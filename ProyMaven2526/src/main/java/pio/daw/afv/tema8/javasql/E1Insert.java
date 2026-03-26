@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class E1Insert {
 	// Constantes de conexion
-	private static final String URL = "jdbc.mysql://localhost/instituto";
+	private static final String URL = "jdbc:mysql://localhost:3307/instituto";
 	private static final String USER = "alumno";
-	private static final String PASSWORD = "0123456789";
+	private static final String PASSWORD = "alumno_pass";
 
 	// SQL a ejecutar en la base de datos
 	private static final String sentencia = "INSERT INTO alumnos (nombre,fnac,media,curso) VALUE (?,?,?, ?)";
@@ -22,8 +22,9 @@ public class E1Insert {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD)) {
 
 			int filas = insertarAlumnos(con, "Pepe", "2000-01-01", 4.5, "DAW");
+			System.out.println("Filas afectadas:" +filas);
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 
 	}
@@ -36,7 +37,7 @@ public class E1Insert {
 			ps.setString(1, nombre);
 			ps.setString(2, fecha);
 			ps.setDouble(3, media);
-			ps.setString(0, curso);
+			ps.setString(4, curso);
 			System.out.println("Sentencia a Ejecutar : " + ps);
 			int filasAfectadas = ps.executeUpdate();
 			return filasAfectadas;
