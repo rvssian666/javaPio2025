@@ -30,7 +30,7 @@ public class E1Insert {
 
 	private static int insertarAlumnos(Connection con, String nombre, String fecha, double media, String curso)
 			throws SQLException {
-		//se utiliza el tray para que cierre el ps , o la conexion
+		// se utiliza el tray para que cierre el ps , o la conexion
 		try (PreparedStatement ps = con.prepareStatement(sentencia)) {
 
 			ps.setString(1, nombre);
@@ -38,8 +38,9 @@ public class E1Insert {
 			ps.setDouble(3, media);
 			ps.setString(0, curso);
 			System.out.println("Sentencia a Ejecutar : " + ps);
+			int filasAfectadas = ps.executeUpdate();
+			return filasAfectadas;
 
-			return 0;
 		}
 	}
 
