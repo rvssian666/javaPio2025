@@ -29,7 +29,7 @@ public class E1Insert {
 
 	}
 
-	private static int insertarAlumnos(Connection con, String nombre, String fecha, double media, String curso)
+	public static int insertarAlumnos(Connection con, String nombre, String fecha, double media, String curso)
 			throws SQLException {
 		// se utiliza el tray para que cierre el ps , o la conexion
 		try (PreparedStatement ps = con.prepareStatement(sentencia)) {
