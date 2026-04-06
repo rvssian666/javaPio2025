@@ -3,3 +3,7 @@ target/
 .\.project
 .\.settings
 .mvn/
+.json
+.txt
+.xml
+.dat
