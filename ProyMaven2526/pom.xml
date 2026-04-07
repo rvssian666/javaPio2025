@@ -78,6 +78,24 @@
 			<version>5.2.0</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.ownStudy</groupId>
+			<artifactId>variadosTema7</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- API JAXB (javax) -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+		<!-- Implementación (JAXB RI) -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
