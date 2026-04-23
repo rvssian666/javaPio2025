@@ -39,19 +39,68 @@ public class AlumnoDAOImplementation implements AlumnoDAO {
 
 	@Override
 	public Alumno read(int id, Connection conn) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "Select num,nombre,fnac,media,curso FROM alumnos WHERE num=?";
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setInt(1, id);
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					Alumno unAlumno = new Alumno();
+					unAlumno.setNum(rs.getInt("num"));
+					unAlumno.setNombre(rs.getString("nombre"));
+					unAlumno.setFnac(rs.getString("fnac"));
+					unAlumno.setMedia(rs.getFloat("media"));
+					unAlumno.setCurso(rs.getString("curso"));
+					return unAlumno;
+				} else
+					return null;
+			}
+		}
+
 	}
 
 	@Override
 	public void update(Alumno nuevoAlumno, Connection conn) throws SQLException {
-		// TODO Auto-generated method stub
+		// 1. Definimos la consulta con '?' para los datos que queremos cambiar
+		// El WHERE es fundamental para no actualizar toda la tabla por error
+		String sql = "UPDATE alumnos SET  nombre=?,fnac=?,media=?,curso=? WHERE num=?";
+		// 2. Usamos try-with-resources para asegurar que el PreparedStatement se cierre
+		// solo
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, nuevoAlumno.getNombre());
+			ps.setString(2, nuevoAlumno.getFnac());
+			ps.setFloat(3, nuevoAlumno.getMedia());
+			ps.setString(4, nuevoAlumno.getCurso());
+			ps.setInt(5, nuevoAlumno.getNum());
+			int filasAfectadas = ps.executeUpdate();
+			if (filasAfectadas > 0) {
+				System.out.println("Alumno con ID " + nuevoAlumno.getNum() + " actualizado con éxito.");
+			} else {
+				System.out.println("No se encontró el alumno con ID " + nuevoAlumno.getNum());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 
 	}
 
 	@Override
 	public void delete(int id, Connection conn) throws SQLException {
-		// TODO Auto-generated method stub
+		String sql = "DELETE FROM alumnos WHERE num=?";
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setInt(1, id);
+			// 4. Ejecutamos la acción
+			int filasBorradas = ps.executeUpdate();
+
+			// 5. Opcional: Feedback para saber si realmente existía ese ID
+			if (filasBorradas > 0) {
+				System.out.println("Registro con ID " + id + " eliminado correctamente.");
+			} else {
+				System.out.println("No se encontró ningún alumno con ID " + id);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 
